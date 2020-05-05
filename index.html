@@ -1,0 +1,74 @@
+
+<!DOCTYPE html>
+<html>
+<!-- (C) Christoph Toeglhofer  myPlaces360 -->
+<head>
+<script src = "https://d3js.org/d3.v4.js"></script>
+<link href ="src/style.css" rel="stylesheet" /> <!-- based on: <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css"> -->
+<script src ="src/orientDistance.js"></script>
+<script src ="src/orientMap.js"></script>
+
+</head>
+
+<body>
+  <center>
+
+    <div id="UpperHeader" class="w3-container w3-sand">
+      <br>
+      <h1> Your places </h1>
+      <p> With this template you can draw a 360 degree map of shortest distance and directions by providing home location and friend locations by adding them in the code.
+        <br>
+        <b> For an interactive version see <a>https://my-places-360.herokuapp.com/ </a></b><p>
+    </div>
+
+    <div id="Map" class="container w3-light-grey">
+
+      <div id="drawMap" class="drawMap">
+
+        <script type="text/javascript">
+        mapSettings = [{
+                        fontSizeHome:70,  // Size of the home location fonts
+                        fontSizeLocation:25, fontSizeDistance:20,   // default: 25 /20  // Size of the friend location fonts
+                             fontHome:"Helvetica", fontLocation:"Helvetica", fontDistance:"Helvetica", //  fonts
+                          fontCorrection:false, //if dependent on the distance fonts should be corrected
+                           mode:"distance",
+                           color:"#f44336" // color used for the map
+                         }];
+
+         homeLocation = [
+           {lon:16.3738189,lat:48.2081743,location:"Vienna"}
+         ];
+
+         friendLocation =  [
+              {lon:13.422713, lat:52.542121, location:"Berlin"},
+              {lon:-0.1277583, lat:51.5073509, location:"London"},
+              {lon:-74.0059728,lat:40.7127753, location:"New York"},
+              {lon:151.2092955,lat:-33.8688197,location:"Sydney"},
+              {lon:-122.4194155,lat:37.7749295, location: "San Fransicso" },
+              {lon: 116.4073963,lat:39.90419989999999,location: "Bejing"},
+              {lon: -58.3815591,lat: -34.6036844,location: "Buenos Aires"},
+              {lon: 37.6172999, lat: 55.755826,location: "Moscow"},
+              {lon: 18.0685808,lat: 59.32932349999999, location: "Stockholm"}
+          ];
+
+          // calculate Parameters
+          calculateMapParameter()
+
+           //update the map
+           DrawOrientMap(update=false);
+
+        </script>
+      </div>
+
+<div id="Reviews" class="w3-container w3-dark-grey">
+
+  <div class="w3-panel w3-green">
+    <h3> Feedback welcome </h3>
+    <p>This is a private project. Eager about your feedback: <a href="mailto:myPlaces360@gmail.com?Subject=Feedback" target="_top">myPlaces360@gmail.com</a></p>
+  </div>
+
+  </div>
+  </center>
+
+</body>
+</html>
